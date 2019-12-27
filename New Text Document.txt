@@ -1,0 +1,25 @@
+.........................................................
+…or push an existing repository from the command line
+.........................................................
+git remote add origin https://github.com/bhattaraimadhu56/0_jQuery-Validation-and-with-popup-modal-validation.git
+git push -u origin master
+
+
+
+
+
+..................................................
+…or create a new repository on the command line
+..................................................
+echo "# 0_jQuery-Validation-and-with-popup-modal-validation" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/bhattaraimadhu56/0_jQuery-Validation-and-with-popup-modal-validation.git
+git push -u origin master
+.............................................
+
+
+
+
+

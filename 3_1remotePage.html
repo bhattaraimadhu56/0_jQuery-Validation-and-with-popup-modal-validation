@@ -1,0 +1,101 @@
+<style>
+    .error {
+        color: red;
+    }
+</style>
+<div class="modal-header">
+    <h2 class="modal-title" id="exampleModalLabel">3_modalform validation by jquery plugin from remote next page
+    </h2>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <!-- ==========================Form Code with Jquery Validation Script Start================== -->
+
+
+    <form id="madhuFormValidation" method="post" action="formSubmitMessage.html">
+        <div>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="fname"></input>
+        </div>
+        <div>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lname"></input>
+        </div>
+        <div>
+            <label for="user_email">Email:</label>
+            <input type="email" id="user_email" name="user_email"></input>
+        </div>
+        <div>
+            <label for="psword">Password:</label>
+            <input type="password" id="psword" name="psword"></input>
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#madhuFormValidation').validate({
+                rules: {
+                    fname: 'required',
+                    lname: 'required',
+                    user_email: {
+                        required: true,
+                        email: true,
+                    },
+                    psword: {
+                        required: true,
+                        minlength: 8,
+                    }
+                },
+                messages: {
+                    fname: 'Madhu, First Name  is required',
+                    lname: 'Madhu, Last Name  is required',
+                    user_email: {
+                        required: 'Madhu, Email  is required',
+                        email: 'Madhu , Plz enter valid email',
+                    },
+                    psword: {
+                        required: 'Madhu, Password  is required',
+                        minlength: 'Madhu, Password must be at least 8 characters long',
+                    }
+                },
+                
+                // If we want to make the label and input field both in red color
+                      highlight: function (element) {
+                       $(element).parent().addClass('error')
+                     },
+                     unhighlight: function (element) {
+                       $(element).parent().removeClass('error')
+                     }
+
+
+
+
+                // // If we want to make only the  input field both in red color
+                // highlight: function (element) {
+                //     $(element).addClass('error')
+                // },
+                // unhighlight: function (element) {
+                //     $(element).removeClass('error')
+                // }
+
+            });
+
+        });
+
+
+    </script>
+
+    <!-- ==========================Form Code with Jquery Validation Script End================== -->
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+</div>
